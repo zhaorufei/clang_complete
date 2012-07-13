@@ -1,3 +1,6 @@
+The main purpose is to improve clang_complete to make it works with latest
+clang and ensure it works for gvim on windows as well as on linux.
+
 This plugin uses clang for accurately completing C and C++ code.
 
 To build and install in one step, type:
