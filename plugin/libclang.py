@@ -274,6 +274,10 @@ def getCurrentCompletions(base):
     return []
 
   results = cr.results
+  # Filter out completions of which any use of it will be an error
+  # Ref: index.h (CXAvailabilityKind)
+  results = filter(lambda x: str(x.string.availability) != 'NotAccessible' \
+          and str(x.string.availability) != "NotAvailable", results)
 
   if base != "":
     regexp = re.compile("^" + base)
